@@ -25,11 +25,30 @@ public class Test {
 //studentList.printfList();
 //studentList.printfListByGrope(3);
 //studentList.printfListSortByMark();
-studentList.studentStatic();
-        System.out.println( "avetage score " + studentList.averageScore());
+//studentList.studentStatic();
+//System.out.println( "avetage score " + studentList.averageScore());
+        StudentList2 studentList2=new StudentList2();
+        studentList2.addStudent(st1,st1.getMark());
+        studentList2.addStudent(st2,st2.getMark());
+        studentList2.addStudent(st3,st3.getMark());
+        studentList2.addStudent(st4,st4.getMark());
+        studentList2.addStudent(st5,st5.getMark());
+        studentList2.printfList2();
+
     }
 }
 
+class StudentList2 {
+    private Map<Student,Integer> studentList2 = new HashMap<>();
+
+    public void addStudent(Student st,int m) {
+        studentList2.put(st,m);
+    }
+    public void  printfList2(){
+        for (Student student: studentList2.keySet())
+            System.out.println( student.toString());
+    }
+}
  class StudentList {
      private List<Student> studentList = new ArrayList<>();
      public void addStudent(Student st){
@@ -58,7 +77,7 @@ studentList.studentStatic();
          }
      }
      public double averageScore (){
-         double avg=0;
+         double avg;
          int sum=0;
          int i=0;
          for (Student student:studentList){
