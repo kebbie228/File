@@ -12,7 +12,10 @@ public class WriteIni {
         try {
             file.createNewFile();
             Wini ini=new Wini(file);
-            ini.put("options","desc","Описание");
+
+            ini.put("options", "name", "Изделие №1");
+            ini.put("options", "number", 12345);
+            ini.put("options", "value", 3.2);
             ini.store();
         } catch (IOException e) {
             e.printStackTrace();
